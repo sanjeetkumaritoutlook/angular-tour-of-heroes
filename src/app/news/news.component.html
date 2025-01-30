@@ -1,10 +1,21 @@
 <p>news works!</p>
-<p> Web components(Angular elements)</p>
-<div *ngFor="let article of articles">
+<!-- <div *ngFor="let article of articles">
     <h2>{{article.title}}</h2>
     
       <p>
         {{article.description}}
       </p>
       <a href="{{article.url}}">Read full article</a>
+  </div> -->
+  <h1>news from RSS feed xml</h1>
+  <div *ngIf="news.length; else loading">
+    <h2>Latest News</h2>
+    <ul>
+      <li *ngFor="let article of news">
+        <a [href]="article.link" target="_blank">{{ article.title }}</a>
+      </li>
+    </ul>
   </div>
+  <ng-template #loading>
+    <p>Loading news...</p>
+  </ng-template>

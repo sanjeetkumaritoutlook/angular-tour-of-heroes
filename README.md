@@ -6,6 +6,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+set NODE_OPTIONS=--openssl-legacy-provider
+
+## counter example
+
+https://stackblitz.com/edit/angular-1nfb8c?file=src%2Fapp%2Fapp.component.ts
+
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
