@@ -44,10 +44,10 @@ export class DataService {
   //Since RSS feeds return XML, you need to parse it in your Angular app. 
     // Use HttpClient with responseType: 'text' and an XML parser
 	//use an RSS feed and parse XML into JSON
-  return this.http.get(this.apiUrl, { responseType: 'text' }).pipe(
+  return this.http.get(this.apiUrl, { responseType: 'json'  }).pipe(
     map(response => {
       const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(response, 'text/xml');
+      const xmlDoc = parser.parseFromString(response['contents'], 'text/xml');
       const items = xmlDoc.getElementsByTagName('item');
 
       let newsItems: any[] = [];
